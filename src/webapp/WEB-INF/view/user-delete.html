@@ -2,12 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>New User</title>
+    <title>Delete User</title>
 </head>
 <body>
-<h2>User Info</h2>
-<br>
-<form action="#" th:action="@{/user-create}" th:object="${user}" method="post">
+<form action="#" th:action="@{/user-delete/id(id=${user.id})}" th:object="${user}" method="post">
     <label for="name">Name</label>
     <input type="text" th:field="*{name}" id="name" placeholder="Name">
     <br><br>
@@ -20,7 +18,9 @@
     <label for="email">Email</label>
     <input type="text" th:field="*{email}" id="email" placeholder="Email">
     <br><br>
-    <input type="submit" value="Save User">
+    Do you want to delete this user?
+    <br><br>
+    <input type="submit" value="Delete User">
 </form>
 
 </body>

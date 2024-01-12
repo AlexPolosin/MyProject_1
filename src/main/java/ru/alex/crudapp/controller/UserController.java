@@ -34,9 +34,14 @@ public class UserController {
         userService.addUser(user);
         return "redirect:/";
     }
+    @GetMapping("/user-delete/edit/id")
+    public String deleteUserForm(@RequestParam int id, Model model) {
+        model.addAttribute("user", userService.getUser(id));
+        return "/user-delete";
+    }
 
-    @GetMapping("/user-delete/id")
-    public String deleteUser(@RequestParam int id) {
+    @PostMapping("/user-delete/id")
+    public String deleteUser(@RequestParam int id, @ModelAttribute("user") User user, Model model) {
         userService.deleteUser(id);
         return "redirect:/";
     }

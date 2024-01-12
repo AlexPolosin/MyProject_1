@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
-    <title>Users</title>
+  <meta charset="UTF-8">
+  <title>Users</title>
 </head>
 <body>
 <table>
@@ -20,8 +21,8 @@
     <td th:text="${user.surname}"></td>
     <td th:text="${user.age}"></td>
     <td th:text="${user.email}"></td>
-    <td><a th:href="@{user-update/edit/id(id=${user.id})}">Update</a></td>
-    <td><a th:href="@{user-delete/id(id=${user.id})}">Delete</a></td>
+    <td><a th:href="@{/user-update/edit/id(id=${user.id})}">Update</a></td>
+    <td><a th:href="@{/user-delete/edit/id(id=${user.id})}">Delete</a></td>
   </tr>
   </tbody>
 </table>
